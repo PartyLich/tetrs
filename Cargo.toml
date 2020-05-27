@@ -1,0 +1,7 @@
+[workspace]
+
+members = [
+    "tetrs",
+    "cell_engine",
+    "entity_man",
+]
