@@ -1,3 +1,5 @@
+pub mod entity_manager;
+
 const ENTITY_INDEX_BITS: u32 = 22;
 const ENTITY_INDEX_MASK: u32 = (1 << ENTITY_INDEX_BITS) - 1;
 
