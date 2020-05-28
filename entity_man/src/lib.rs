@@ -29,6 +29,18 @@ impl Entity {
     }
 }
 
+/// Keeps track of entities
+pub trait EntityManager {
+    /// Create a new Entity
+    fn create(&mut self) -> Entity;
+
+    /// Returns true if the supplied Entity is still alive
+    fn alive(&self, e: &Entity) -> bool;
+
+    /// Removes the supplied Entity and frees its index for reuse
+    fn destroy(&mut self, e: &Entity);
+}
+
 #[cfg(test)]
 mod tests {
     use super::*;
