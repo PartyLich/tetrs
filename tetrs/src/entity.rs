@@ -9,7 +9,7 @@ type Position = ecs::types::Vector2<i32>;
 fn create(ecs: &mut World, kind: Tetromino) -> TetrsResult<Entity> {
     let e = ecs
         .build_entity()
-        .with(kind.new())
+        .with(kind.mesh())
         .with(kind.color())
         .with(component::Size(kind.size()))
         .done();

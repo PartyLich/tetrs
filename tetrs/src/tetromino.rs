@@ -24,7 +24,7 @@ pub enum Tetromino {
 
 impl Tetromino {
     /// Create a mesh component for this type of Tetromino
-    pub fn new(&self) -> crate::component::Mesh {
+    pub fn mesh(&self) -> crate::component::Mesh {
         match self {
             Self::O => tetro_o(),
             Self::I => tetro_i(),
