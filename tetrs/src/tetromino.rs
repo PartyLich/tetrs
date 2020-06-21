@@ -66,12 +66,12 @@ impl Tetromino {
     pub fn random() -> Self {
         let row = rand::thread_rng().gen_range(0, 7);
         match row {
-            row if row == 0 => Tetromino::O,
-            row if row == 1 => Tetromino::I,
-            row if row == 2 => Tetromino::J,
-            row if row == 3 => Tetromino::L,
-            row if row == 4 => Tetromino::Z,
-            row if row == 5 => Tetromino::S,
+            0 => Tetromino::O,
+            1 => Tetromino::I,
+            2 => Tetromino::J,
+            3 => Tetromino::L,
+            4 => Tetromino::Z,
+            5 => Tetromino::S,
             _ => Tetromino::T,
         }
     }
