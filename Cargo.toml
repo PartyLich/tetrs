@@ -3,5 +3,6 @@
 members = [
     "tetrs",
     "cell_engine",
+    "ecs",
     "entity_man",
 ]

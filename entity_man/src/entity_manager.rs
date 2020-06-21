@@ -2,8 +2,8 @@ use std::collections::VecDeque;
 
 use super::{Entity, EntityManager, ENTITY_INDEX_BITS};
 
-/// Keeps track of entitie with generational indexes
-#[derive(Debug, PartialEq)]
+/// Keeps track of entities with generational indexes
+#[derive(Debug, PartialEq, Default)]
 pub struct EntityManagerU32 {
     /// bucket array where keys are entity id and values are generation
     generation: Vec<u8>,
