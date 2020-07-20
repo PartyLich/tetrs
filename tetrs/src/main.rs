@@ -4,6 +4,16 @@ use cell_engine::gfx;
 use sdl2::{event::Event, keyboard::Keycode, render::Canvas, ttf, video::Window};
 use tetrs::GameState;
 
+#[cfg(debug_assertions)]
+fn get_root_dir() -> String {
+    env!("CARGO_MANIFEST_DIR").to_string()
+}
+
+#[cfg(not(debug_assertions))]
+fn get_root_dir() -> String {
+    ".".to_string()
+}
+
 fn main() {
     const CANVAS_WIDTH: u32 = 720_u32;
     const CANVAS_HEIGHT: u32 = 540;
@@ -14,7 +24,7 @@ fn main() {
 
     // fonts. keep the ttf context on the stack, can't move it, etc
     let ttf_context = ttf::init().unwrap();
-    let font_path = [env!("CARGO_MANIFEST_DIR"), tetrs::FONT_PATH].concat();
+    let font_path = [&get_root_dir(), tetrs::FONT_PATH].concat();
     println!("font path: {}", font_path);
     let game_font = gfx::init_font(&ttf_context, &font_path, tetrs::FONT_SIZE_MD);
 
